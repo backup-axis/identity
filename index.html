@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f4ef">
+    <meta name="description" content="つっくん本人の現在の確認方法と、サーバー利用不能時の案内です。">
+    <title>つっくん｜本人確認</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="identity.js" defer></script>
+  </head>
+  <body>
+    <div class="app-frame">
+      <aside class="sidebar">
+        <a class="brand" href="#top" aria-label="つっくん本人確認 トップ">
+          <img class="brand-image" src="assets/tsukkun-profile.png" alt="">
+          <span class="brand-name"><strong>つっくん</strong><small>本人確認</small></span>
+        </a>
+        <nav class="side-nav" aria-label="ページ内ナビゲーション">
+          <a href="#current-state">現在の本人確認方法</a>
+          <a href="#cautions">注意事項</a>
+          <a href="#fallback">サーバーが使えない場合</a>
+        </nav>
+        <div class="sidebar-footer">本人確認の案内 <span>JP</span></div>
+      </aside>
+
+      <div class="main-column">
+        <header class="topbar"><span>つっくん <span class="crumb-divider">/</span> 本人確認</span></header>
+        <main id="top" class="content">
+          <h1 class="page-title">本人確認</h1>
+
+          <section id="current-state" class="current-state" aria-labelledby="current-state-title">
+            <div class="current-state-heading">
+              <h2 id="current-state-title">現在の本人確認方法</h2>
+              <div class="state-actions">
+                <span id="server-state" class="state-badge" role="status">確認中</span>
+                <button id="refresh-widget" type="button">再確認</button>
+              </div>
+            </div>
+            <div class="current-state-body">
+              <div class="state-information">
+                <dl class="state-details">
+                  <div><dt>対象サーバー名</dt><dd id="current-server-name">—</dd></div>
+                  <div><dt>サーバーID</dt><dd id="current-server-id" class="server-id">—</dd></div>
+                  <div class="method-detail"><dt>本人確認方法</dt><dd id="current-method">対象サーバーで「つっくん本人」ロールが付与されていること</dd></div>
+                </dl>
+                <div id="widget-issue" class="widget-issue" hidden>
+                  <p id="widget-issue-note"></p>
+                </div>
+              </div>
+              <div class="widget-frame">
+                <iframe src="https://discord.com/widget?id=1365037609373401250&theme=dark" width="300" height="240" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" title="現在の本人確認サーバー" loading="lazy"></iframe>
+              </div>
+            </div>
+          </section>
+
+          <section id="cautions" class="caution-section" aria-labelledby="cautions-title">
+            <h2 id="cautions-title">注意事項</h2>
+            <p class="caution-intro">本人確認が済むまで、以下を厳守してください。</p>
+            <div class="caution-list">
+              <p><strong>ロールが確認できない場合は、理由を問わず本人ではなく、なりすましとして扱ってください。</strong></p>
+              <p>表示名・アイコン・プロフィール・DM・通話・スクリーンショット・第三者の保証は、本人確認の根拠になりません。</p>
+              <p>ロールを確認するまでは、相手をなりすましとして扱い、警戒を怠らないでください。</p>
+              <p>本人確認は、対象サーバーでロールを確認して行ってください。</p>
+              <p>サーバーが使えない場合は、このページに掲載された案内を確認してください。</p>
+              <p>ページは必ず現行サーバーで案内された物を開いてください。偽ページに騙されないように。
+            </div>
+          </section>
+
+          <section id="fallback" class="fallback-section" aria-labelledby="fallback-title">
+            <h2 id="fallback-title">サーバーが使えない場合</h2>
+            <p>現在のサーバーが使えない場合は、<br><strong class="method-emphasis">バックアップサーバーに参加してください。</strong></p>
+            <p>バックアップサーバーも使えなくなった場合は、<br><strong class="method-emphasis">新しい本人確認方法をこのサイトに掲載します。</strong></p>
+            <a id="backup-server" class="backup-link" href="https://discord.gg/am73aarrJP" target="_blank" rel="noopener noreferrer">バックアップサーバーに参加 <span aria-hidden="true">↗</span></a>
+          </section>
+
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
